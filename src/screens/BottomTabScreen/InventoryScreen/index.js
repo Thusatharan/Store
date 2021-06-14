@@ -25,7 +25,10 @@ function index({navigation}) {
             />
           </View>
           <View>
-            <TouchableOpacity onPress={isAuthorized ? null : null}>
+            <TouchableOpacity
+              onPress={
+                isAuthorized ? () => navigation.navigate('AllInventory') : null
+              }>
               <View style={styles.mainContent}>
                 <Text style={styles.title}>All Inventory</Text>
                 <View style={styles.iconStyle}>
@@ -38,7 +41,10 @@ function index({navigation}) {
               </View>
             </TouchableOpacity>
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-            <TouchableOpacity onPress={isAuthorized ? null : null}>
+            <TouchableOpacity
+              onPress={
+                isAuthorized ? () => navigation.navigate('OutOfStock') : null
+              }>
               <View style={styles.mainContent}>
                 <Text style={styles.title}>Out of Stock</Text>
                 <View style={styles.iconStyle}>
@@ -51,7 +57,10 @@ function index({navigation}) {
               </View>
             </TouchableOpacity>
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-            <TouchableOpacity onPress={isAuthorized ? null : null}>
+            <TouchableOpacity
+              onPress={
+                isAuthorized ? () => navigation.navigate('LowStockAlert') : null
+              }>
               <View style={styles.mainContent}>
                 <Text style={styles.title}>Low Stock Alert</Text>
                 <View style={styles.iconStyle}>
@@ -64,7 +73,12 @@ function index({navigation}) {
               </View>
             </TouchableOpacity>
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-            <TouchableOpacity onPress={isAuthorized ? null : null}>
+            <TouchableOpacity
+              onPress={
+                isAuthorized
+                  ? () => navigation.navigate('ShortDateAlert')
+                  : null
+              }>
               <View style={styles.mainContent}>
                 <Text style={styles.title}>Short Date Alert</Text>
                 <View style={styles.iconStyle}>
