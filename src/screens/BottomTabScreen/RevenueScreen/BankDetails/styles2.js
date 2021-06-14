@@ -14,17 +14,25 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
   },
-
+  headerContent: {
+    height: 200,
+    width: heightWidth,
+    backgroundColor: '#ececec',
+  },
+  headerTitle: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  signInBtn: {
+    backgroundColor: '#7F7F7F',
+    width: ScreenWidth - 100,
+    marginHorizontal: 50,
+  },
   mainContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 10,
     marginVertical: 20,
-  },
-  mainContent1: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-
   },
   title: {
     fontSize: 16,
@@ -42,4 +50,24 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 10,
   },
+
+  txtcon: {
+    padding: 15
+  },
+  txtrow: {
+    flexDirection: 'row',
+  },
+  txt: {
+    fontSize: 20
+  },
+  txt2: {
+    fontSize: 20,
+    paddingLeft:5
+  },
+  txtrow2: {
+    marginRight:10,
+    backgroundColor: 'lightgreen',
+    alignSelf: 'flex-end',
+    width: 50,
+  }
 });

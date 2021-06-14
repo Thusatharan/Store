@@ -38,8 +38,9 @@ function index({navigation}) {
                 paddingRight: 3,
                 paddingLeft: 5,
                 marginTop: 10,
+                width:90
               }}>
-              <Text h4>DELIVER</Text>
+              <Text h4>STOR</Text>
               <Text h4 style={{color: 'red'}}>
                 E
               </Text>
@@ -48,7 +49,7 @@ function index({navigation}) {
         </View>
         <Image
           style={styles.footer}
-          source={require('../../../assets/img/delivere.png')}
+          source={require('../../../assets/img/Store.png')}
         />
       </View>
     </SafeAreaView>

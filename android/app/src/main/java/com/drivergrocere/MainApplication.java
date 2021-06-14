@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;

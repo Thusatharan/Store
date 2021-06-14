@@ -3,6 +3,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 import RevenueScreen from '../screens/BottomTabScreen/RevenueScreen';
+import BankDetails from '../screens/BottomTabScreen/RevenueScreen/BankDetails';
+
 
 const RevenueStackNavigator = () => {
   return (
@@ -16,6 +18,8 @@ const RevenueStackNavigator = () => {
         gestureDirection: 'vertical',
       }}>
       <Stack.Screen name="Revenue" component={RevenueScreen} />
+      <Stack.Screen name="BankDetails" component={BankDetails} />
+
     </Stack.Navigator>
   );
 };
