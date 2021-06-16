@@ -22,7 +22,7 @@ function index({navigation}) {
           <View style={styles.headerContent}>
             <View style={styles.headerTitle}>
               {isAuthorized ? (
-                <View>
+                <View style={{marginLeft: 20}}>
                   <Text
                     style={{
                       fontSize: 18,
