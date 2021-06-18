@@ -30,7 +30,7 @@ function index({navigation}) {
                 isAuthorized ? () => navigation.navigate('AllOrders') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>All Orders</Text>
+                <Text style={styles.title}>All</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
@@ -46,7 +46,7 @@ function index({navigation}) {
                 isAuthorized ? () => navigation.navigate('Processing') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>Processing Orders</Text>
+                <Text style={styles.title}>Processing</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
@@ -62,7 +62,7 @@ function index({navigation}) {
                 isAuthorized ? () => navigation.navigate('UpComing') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>Upcoming Orders</Text>
+                <Text style={styles.title}>Upcoming</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
@@ -78,7 +78,7 @@ function index({navigation}) {
                 isAuthorized ? () => navigation.navigate('Completed') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>Completed Orders</Text>
+                <Text style={styles.title}>Completed</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
