@@ -1,85 +1,67 @@
 import React from 'react';
-import {View, SafeAreaView, TouchableOpacity} from 'react-native';
-import {Text, Button, Divider} from 'react-native-elements';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import VersionNumber from 'react-native-version-number';
+import {
+  View,
+  SafeAreaView,
+  ActivityIndicator,
+  ScrollView,
+  RefreshControl,
+} from 'react-native';
 
+import ListItem from '../../../../components/shared/List';
+import Header from '../../../../components/shared/Header';
 import styles from './styles';
 import Colors from '../../../../constants/Colors';
-import Header from '../../../../components/shared/Header';
+import {useFetch} from '../../../../hooks/axios';
+import {wait} from '../../../../lib/healper';
 
 function index({navigation}) {
+  const [refreshing, setRefreshing] = React.useState(false);
+  const {response, isLoading} = useFetch({
+    url: 'store/api/shipments?token=true&inventory_packing_status=completed',
+  });
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
+  const items = React.useMemo(() => {
+    return response?.data.map((doc) => ({
+      id: doc.id,
+      status: doc.status,
+      total_qty: doc.total_qty,
+      inventory_status: doc.driver_status,
+      inventory_packing_status: doc.driver_delivery_status,
+    }));
+  }, [response?.data]);
+
+  if (!response?.data) {
+    return null;
+  }
+
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      <View style={styles.content}>
-        <View>
-          <View>
-            <Header
+      <View>
+        <Header
+          navigation={navigation}
+          title="Completed"
+          placement="left"
+          isBack={true}
+        />
+        {isLoading ? (
+          <ActivityIndicator size="large" color={Colors.primary} />
+        ) : (
+          <ScrollView
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }>
+            <ListItem
+              data={items}
               navigation={navigation}
-              title="Completed"
-              placement="center"
-              isBack={true}
+              navigationUrl="Orders Details"
             />
-          </View>
-          <View>
-            <TouchableOpacity
-              style={styles.mainContent}
-              onPress={() => navigation.navigate('Orders Details')}>
-              <View style={styles.mainContent1}>
-                <Text style={styles.title}>1.</Text>
-                <Text style={styles.title}>#</Text>
-                <Text style={styles.title}>10029</Text>
-              </View>
-              <View style={styles.iconStyle}>
-                <Ionicons
-                  name="arrow-forward-outline"
-                  size={23}
-                  color={'#FFFFFF'}
-                />
-              </View>
-            </TouchableOpacity>
-            <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-            <TouchableOpacity style={styles.mainContent}>
-              <View style={styles.mainContent1}>
-                <Text style={styles.title}>2.</Text>
-                <Text style={styles.title}>#</Text>
-                <Text style={styles.title}>10030</Text>
-              </View>
-              <View style={styles.iconStyle}>
-                <Ionicons
-                  name="arrow-forward-outline"
-                  size={23}
-                  color={'#FFFFFF'}
-                />
-              </View>
-            </TouchableOpacity>
-            <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-            <TouchableOpacity style={styles.mainContent}>
-              <View style={styles.mainContent1}>
-                <Text style={styles.title}>3.</Text>
-                <Text style={styles.title}>#</Text>
-                <Text style={styles.title}>10031</Text>
-              </View>
-              <View style={styles.iconStyle}>
-                <Ionicons
-                  name="arrow-forward-outline"
-                  size={23}
-                  color={'#FFFFFF'}
-                />
-              </View>
-            </TouchableOpacity>
-            <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
-          </View>
-        </View>
-
-        <View style={styles.footer}>
-          <Text style={{color: '#7F7F7F'}}>
-            ©Grocere Limited {`${new Date().getFullYear()}`}
-          </Text>
-          <Text style={{color: '#7F7F7F'}}>
-            {VersionNumber.appVersion}.{VersionNumber.buildVersion}
-          </Text>
-        </View>
+          </ScrollView>
+        )}
       </View>
     </SafeAreaView>
   );
