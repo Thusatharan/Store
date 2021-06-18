@@ -43,10 +43,10 @@ function index({navigation}) {
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
             <TouchableOpacity
               onPress={
-                isAuthorized ? () => navigation.navigate('NewOrders') : null
+                isAuthorized ? () => navigation.navigate('Processing') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>New Orders</Text>
+                <Text style={styles.title}>Processing Orders</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
@@ -59,10 +59,10 @@ function index({navigation}) {
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
             <TouchableOpacity
               onPress={
-                isAuthorized ? () => navigation.navigate('PendingOrder') : null
+                isAuthorized ? () => navigation.navigate('UpComing') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>Pending Orders</Text>
+                <Text style={styles.title}>Upcoming Orders</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"
@@ -75,10 +75,10 @@ function index({navigation}) {
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
             <TouchableOpacity
               onPress={
-                isAuthorized ? () => navigation.navigate('OrderHistory') : null
+                isAuthorized ? () => navigation.navigate('Completed') : null
               }>
               <View style={styles.mainContent}>
-                <Text style={styles.title}>Orders History</Text>
+                <Text style={styles.title}>Completed Orders</Text>
                 <View style={styles.iconStyle}>
                   <Ionicons
                     name="arrow-forward-outline"

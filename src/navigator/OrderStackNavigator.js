@@ -4,12 +4,10 @@ const Stack = createStackNavigator();
 
 import OrderScreen from '../screens/BottomTabScreen/OrderScreen';
 import AllOrderScreen from '../screens/BottomTabScreen/OrderScreen/AllOrders';
-import NewOrderScreen from '../screens/BottomTabScreen/OrderScreen/NewOrder';
-import PendingOrderScreen from '../screens/BottomTabScreen/OrderScreen/PendingOrder';
-import OrderHistoryScreen from '../screens/BottomTabScreen/OrderScreen/OrderHistory';
+import ProcessingOrderScreen from '../screens/BottomTabScreen/OrderScreen/Processing';
+import UpComingOrderScreen from '../screens/BottomTabScreen/OrderScreen/UpComing';
+import CompletedOrderScreen from '../screens/BottomTabScreen/OrderScreen/Completed';
 import OrdersContent from '../screens/BottomTabScreen/OrderScreen/AllOrders/ordersContent';
-
-
 
 const OrderStackNavigator = () => {
   return (
@@ -24,11 +22,10 @@ const OrderStackNavigator = () => {
       }}>
       <Stack.Screen name="Orders" component={OrderScreen} />
       <Stack.Screen name="AllOrders" component={AllOrderScreen} />
-      <Stack.Screen name="NewOrders" component={NewOrderScreen} />
-      <Stack.Screen name="PendingOrder" component={PendingOrderScreen} />
-      <Stack.Screen name="OrderHistory" component={OrderHistoryScreen} />
+      <Stack.Screen name="Processing" component={ProcessingOrderScreen} />
+      <Stack.Screen name="UpComing" component={UpComingOrderScreen} />
+      <Stack.Screen name="Completed" component={CompletedOrderScreen} />
       <Stack.Screen name="OrdersContent" component={OrdersContent} />
-
     </Stack.Navigator>
   );
 };
