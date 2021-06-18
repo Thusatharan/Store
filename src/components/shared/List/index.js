@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
-import { Text, Divider } from 'react-native-elements';
+import {View, TouchableOpacity, Image} from 'react-native';
+import {Text, Divider} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import { startCase } from 'lodash';
+import {startCase} from 'lodash';
 import Colors from '../../../constants/Colors';
 
-function index({ data, navigation, navigationUrl }) {
+function index({data, navigation, navigationUrl}) {
   return (
     <View>
       {data.length != 0 ? (
@@ -20,18 +20,14 @@ function index({ data, navigation, navigationUrl }) {
                   })
                 }>
                 <View style={styles.mainContent}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <View style={{ paddingRight: 18 }}>
-                      <Text style={{ fontSize: 16 }}>#{item.id}</Text>
+                  <View style={{flexDirection: 'row'}}>
+                    <View style={{paddingRight: 18, justifyContent: 'center'}}>
+                      <Text style={{fontSize: 16}}>#{item.id}</Text>
                     </View>
-                    <View style={{ flexDirection: 'column', marginRight: 10 }}>
-                      <Text style={styles.title}>
-                        {'Inventory Status'}{' '}
-
-                      </Text>
+                    <View style={{flexDirection: 'column', marginRight: 10}}>
+                      <Text style={styles.title}>{'Inventory Status'} </Text>
                       <Text style={styles.title}>
                         {'Inventory Packing Status'}{' '}
-
                       </Text>
                       {/* <Text style={styles.subTitle}>
                       {item.shipping_address.address1}
@@ -40,17 +36,23 @@ function index({ data, navigation, navigationUrl }) {
                       {item.shipping_address.postcode}
                     </Text> */}
                     </View>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={(item.inventory_status == 'pending') ? styles.orangeTxt : styles.greenTxt}>
-
+                    <View style={{flexDirection: 'column'}}>
+                      <Text
+                        style={
+                          item.inventory_status == 'pending'
+                            ? styles.orangeTxt
+                            : styles.greenTxt
+                        }>
                         {startCase(item.inventory_status)}
-
                       </Text>
-                      <Text style={(item.inventory_packing_status == 'pending') ? styles.orangeTxt : styles.greenTxt}>
-
+                      <Text
+                        style={
+                          item.inventory_packing_status == 'pending'
+                            ? styles.orangeTxt
+                            : styles.greenTxt
+                        }>
                         {startCase(item.inventory_packing_status)}
                       </Text>
-
                     </View>
                   </View>
                   <View style={styles.iconStyle}>
@@ -62,7 +64,7 @@ function index({ data, navigation, navigationUrl }) {
                   </View>
                 </View>
               </TouchableOpacity>
-              <Divider style={{ backgroundColor: Colors.secondary, height: 5 }} />
+              <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
             </View>
           );
         })
@@ -72,7 +74,7 @@ function index({ data, navigation, navigationUrl }) {
             source={require('../../../assets/img/empty-box.png')}
             style={styles.image}
           />
-          <Text style={{ marginHorizontal: 10, fontWeight: 'bold' }}>
+          <Text style={{marginHorizontal: 10, fontWeight: 'bold'}}>
             No data found.
           </Text>
         </View>

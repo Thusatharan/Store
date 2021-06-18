@@ -18,7 +18,7 @@ function index({navigation}) {
         navigation.navigate('Home');
       } catch (error) {
         formikHelpers.setSubmitting(false);
-        if (error?.response?.status === 400) {
+        if (error) {
           formikHelpers.setFieldError(
             'email',
             'These credentials do not match our records.',
