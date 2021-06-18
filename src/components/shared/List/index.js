@@ -22,7 +22,7 @@ function index({data, navigation, navigationUrl}) {
                 <View style={styles.mainContent}>
                   <View style={{flexDirection: 'row'}}>
                     <View style={{paddingRight: 18}}>
-                      <Text style={{fontSize: 20}}>#{item.id}</Text>
+                      <Text style={{fontSize: 16}}>#{item.id}</Text>
                     </View>
                     <View style={{flexDirection: 'column'}}>
                       {/* <Text style={styles.title}>
