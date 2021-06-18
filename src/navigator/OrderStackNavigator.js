@@ -7,7 +7,7 @@ import AllOrderScreen from '../screens/BottomTabScreen/OrderScreen/AllOrders';
 import ProcessingOrderScreen from '../screens/BottomTabScreen/OrderScreen/Processing';
 import UpComingOrderScreen from '../screens/BottomTabScreen/OrderScreen/UpComing';
 import CompletedOrderScreen from '../screens/BottomTabScreen/OrderScreen/Completed';
-import OrdersContent from '../screens/BottomTabScreen/OrderScreen/AllOrders/ordersContent';
+import OrdersDetailsScreen from '../screens/BottomTabScreen/OrderScreen/Details';
 
 const OrderStackNavigator = () => {
   return (
@@ -25,7 +25,7 @@ const OrderStackNavigator = () => {
       <Stack.Screen name="Processing" component={ProcessingOrderScreen} />
       <Stack.Screen name="UpComing" component={UpComingOrderScreen} />
       <Stack.Screen name="Completed" component={CompletedOrderScreen} />
-      <Stack.Screen name="OrdersContent" component={OrdersContent} />
+      <Stack.Screen name="Orders Details" component={OrdersDetailsScreen} />
     </Stack.Navigator>
   );
 };

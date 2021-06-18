@@ -24,7 +24,7 @@ function index({navigation}) {
           <View>
             <TouchableOpacity
               style={styles.mainContent}
-              onPress={() => navigation.navigate('OrdersContent')}>
+              onPress={() => navigation.navigate('Orders Details')}>
               <View style={styles.mainContent1}>
                 <Text style={styles.title}>1.</Text>
                 <Text style={styles.title}>#</Text>

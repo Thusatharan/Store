@@ -1,5 +1,6 @@
 import React from 'react';
 import AxiosContext from '../contexts/axios';
+import {wait} from '../lib/healper';
 
 export const useDispatch = () => {
   const axios = React.useContext(AxiosContext);
@@ -44,7 +45,7 @@ export const useFetch = (config) => {
       }
 
       if (live) {
-        setLoading(false);
+        wait(1000).then(() => setLoading(false));
       }
     };
 
