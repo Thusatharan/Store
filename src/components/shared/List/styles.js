@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
 let ScreenWidth = Dimensions.get('window').width;
 let ScreenHeight = Dimensions.get('window').height;
 export default StyleSheet.create({
@@ -12,7 +12,6 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: 'bold',
   },
   subTitle: {
     fontSize: 12,
@@ -32,4 +31,13 @@ export default StyleSheet.create({
     height: 100,
     width: 100,
   },
+  greenTxt: {
+    color: 'green',
+    fontWeight:'bold'
+
+  },
+  orangeTxt: {
+    color: 'orange',
+    fontWeight:'bold'
+  }
 });
