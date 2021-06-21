@@ -27,7 +27,9 @@ function index({navigation}) {
           <View>
             <TouchableOpacity
               style={styles.mainContent}
-              onPress={isAuthorized ? null : null}>
+              onPress={
+                isAuthorized ? () => navigation.navigate('Report') : null
+              }>
               <Text style={styles.title}>Current Weeks's Takings</Text>
               <View style={styles.iconStyle}>
                 <Ionicons
@@ -40,7 +42,9 @@ function index({navigation}) {
             <Divider style={{backgroundColor: Colors.secondary, height: 5}} />
             <TouchableOpacity
               style={styles.mainContent}
-              onPress={isAuthorized ? () => navigation.navigate('BankDetails') : null}>
+              onPress={
+                isAuthorized ? () => navigation.navigate('BankDetails') : null
+              }>
               <Text style={styles.title}>Bank Details</Text>
               <View style={styles.iconStyle}>
                 <Ionicons

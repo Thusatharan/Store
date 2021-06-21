@@ -4,7 +4,7 @@ const Stack = createStackNavigator();
 
 import RevenueScreen from '../screens/BottomTabScreen/RevenueScreen';
 import BankDetails from '../screens/BottomTabScreen/RevenueScreen/BankDetails';
-
+import ReportScreen from '../screens/BottomTabScreen/RevenueScreen/Report';
 
 const RevenueStackNavigator = () => {
   return (
@@ -19,7 +19,7 @@ const RevenueStackNavigator = () => {
       }}>
       <Stack.Screen name="Revenue" component={RevenueScreen} />
       <Stack.Screen name="BankDetails" component={BankDetails} />
-
+      <Stack.Screen name="Report" component={ReportScreen} />
     </Stack.Navigator>
   );
 };
