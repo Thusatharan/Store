@@ -74,5 +74,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginRight: 8,
     color: 'white',
+    paddingVertical:10,
+    paddingHorizontal:20,
   },
 });
