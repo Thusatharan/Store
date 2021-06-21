@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
 let ScreenWidth = Dimensions.get('window').width;
 let heightWidth = Dimensions.get('window').height;
 
@@ -10,71 +10,113 @@ export default StyleSheet.create({
     width: ScreenWidth,
     height: heightWidth,
   },
-  MainCon: {
+
+  mainContainer: {
+    width: '100%',
     flex: 1,
     flexDirection: 'column',
   },
 
-  BorderCon: {
-    height: 90,
-    width: '96%',
-    borderWidth: 2,
-    borderColor: 'green',
-    margin: 10,
-    borderRadius: 8,
+  headStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+    paddingHorizontal: 30,
   },
-  BorderCon2: {
-    height: 370,
-    width: '96%',
-    borderWidth: 2,
-    borderColor: 'green',
-    margin: 10,
-    borderRadius: 8,
+  headLabel: {
+    flexDirection: 'column'
   },
 
-  SubCon2: {
-    flexDirection: 'row',
+  headTextStyle: {
+    fontSize: 14,
   },
-  SubCon3: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    marginTop: 8,
-    marginBottom: 5,
+  tableContainer: {
+    width: '90%',
+    marginHorizontal: 20,
+    borderColor: 'green',
+    borderWidth: 1,
+    padding: 5,
   },
-  SubCon4: {
-    justifyContent: 'space-between',
+  tableHeadContainer: {
     flexDirection: 'row',
-    marginTop: 8,
+    width: '100%',
+    borderBottomColor: 'green',
+    borderBottomWidth: 1,
+    padding: 10,
   },
 
-  TextStyl: {
-    fontSize: 20,
-    marginTop: 8,
-    marginLeft: 8,
+  headText1: {
+    flex: 3,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  TextStyl2: {
-    fontSize: 20,
-    marginLeft: 6,
+
+  headText2: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: 'bold',
+
   },
-  SubCol: {
+
+  headText3: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  tableBodyContainer: {
     flexDirection: 'row',
-    marginRight: 20,
+    alignContent: 'center',
+    width: '100%',
+    padding: 10,
   },
-  SmallCon: {
-    marginTop: 5,
+
+  bodyText1: {
+    flex: 3,
+    paddingRight: 10,
+
+  },
+
+  bodyText2: {
+    flex: 1,
     borderColor: 'green',
-    borderWidth: 2,
-    height: 30,
-    width: 30,
+    borderWidth: 1,
+    alignItems: 'center',
+    textAlign: 'center',
+    marginHorizontal:10,
   },
-  NewTxt: {
-    fontSize: 20,
-    alignSelf: 'flex-end',
-    backgroundColor: 'lightgreen',
-    borderRadius: 5,
-    marginRight: 8,
-    color: 'white',
-    paddingVertical:10,
+
+  bodyText3: {
+    flex: 1,
+    borderColor: 'green',
+    borderWidth: 1,
+    alignItems: 'center',
+    textAlign: 'center',
+    marginHorizontal:10,
+  },
+
+  buttonContainer:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginHorizontal:40,
+  },
+
+  declineButon:{
     paddingHorizontal:20,
+    paddingVertical:10,
+    marginVertical:10,
+    backgroundColor:'red',
+    borderRadius:5,
   },
+
+  acceptButon:{
+    paddingHorizontal:20,
+    paddingVertical:10,
+    marginVertical:10,
+    backgroundColor:'green',
+    borderRadius:5,
+
+
+  }
+
 });
