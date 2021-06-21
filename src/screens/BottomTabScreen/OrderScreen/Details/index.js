@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
-import { Text, Button, Divider } from 'react-native-elements';
+import {Text, Button, Divider} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import VersionNumber from 'react-native-version-number';
 
@@ -13,10 +13,10 @@ import styles from './styles';
 
 import Colors from '../../../../constants/Colors';
 import Header from '../../../../components/shared/Header';
-import { useLoadItem } from './hooks';
+import {useLoadItem} from './hooks';
 
-function index({ route, navigation }) {
-  const { isLoading, response, onLoadItem } = useLoadItem(route.params.id);
+function index({route, navigation}) {
+  const {isLoading, response, onLoadItem} = useLoadItem(route.params.id);
   const item = React.useMemo(() => {
     return response?.data?.items.map((doc) => ({
       name: doc?.name,
@@ -25,14 +25,9 @@ function index({ route, navigation }) {
     }));
   }, [response?.data]);
 
-
   if (!response?.data) {
     return null;
   }
-  
-  console.log('...............................')
-  console.log(item.length);
-  console.log('...............................')
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -69,26 +64,25 @@ function index({ route, navigation }) {
                 </View>
               </View>
               {item.length != 0 ? (
-                item.map((items, index) => {
-                  <View style={styles.SubCon4}>
-                    <Text style={styles.TextStyl}>{items.name}</Text>
-                    <View style={styles.SubCol}>
-                      <View style={styles.SmallCon}>
-                        <Text style={styles.TextStyl2}>{items.quantity}</Text>
+                item.map((doc) => {
+                  return (
+                    <View style={styles.SubCon4}>
+                      <Text style={styles.TextStyl}>{doc.name}</Text>
+                      <View style={styles.SubCol}>
+                        <View style={styles.SmallCon}>
+                          <Text style={styles.TextStyl2}>{doc.quantity}</Text>
+                        </View>
                       </View>
+                      <View style={styles.SmallCon}>
+                        <Text style={styles.TextStyl2}>{doc.picked}</Text>
+                      </View>
+                      <Text style={styles.TextStyl2}></Text>
                     </View>
-                    <View style={styles.SmallCon}>
-                      <Text style={styles.TextStyl2}>{items.picked}</Text>
-                    </View>
-                    <Text style={styles.TextStyl2}></Text>
-                  </View>
-
-                })) :
-
-                <View> <Test>No data found</Test></View>
-
-              }
-
+                  );
+                })
+              ) : (
+                <Test>No data found</Test>
+              )}
             </View>
             <Text style={styles.NewTxt}>Ready For Collection</Text>
           </View>

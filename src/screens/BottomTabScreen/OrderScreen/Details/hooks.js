@@ -1,6 +1,7 @@
 import {useState, useEffect, useCallback} from 'react';
 import {useDispatch} from 'react-redux';
 import {loadItem} from '../../../../actions/shipments/index';
+import {wait} from '../../../../lib/healper';
 
 // List Item
 export function useLoadItem(url) {
@@ -14,7 +15,8 @@ export function useLoadItem(url) {
       const response = await dispatch(loadItem(url));
       setResponse(response);
     } catch (e) {}
-    setLoading(false);
+    // setLoading(false);
+    wait(1000).then(() => setLoading(false));
   }, [dispatch, url]);
 
   useEffect(() => {
