@@ -37,4 +37,7 @@ export default StyleSheet.create({
     backgroundColor: 'green',
     borderRadius: 5,
   },
+  Overlay: {
+    width: ScreenWidth - 40,
+  },
 });
