@@ -16,8 +16,6 @@ import UpComingOrderDetailScreen from '../screens/BottomTabScreen/OrderScreen/Up
 import CompletedOrderScreen from '../screens/BottomTabScreen/OrderScreen/Completed';
 import CompletedDetailsScreen from '../screens/BottomTabScreen/OrderScreen/Completed/Details';
 
-import OrdersDetailsScreen from '../screens/BottomTabScreen/OrderScreen/Details';
-
 const OrderStackNavigator = () => {
   return (
     <Stack.Navigator
@@ -35,18 +33,22 @@ const OrderStackNavigator = () => {
       <Stack.Screen name="All Order Detail" component={AllOrderDetailScreen} />
 
       <Stack.Screen name="Processing" component={ProcessingOrderScreen} />
-      <Stack.Screen name="Processing Detail" component={ProcessingOrderDetailScreen} />
+      <Stack.Screen
+        name="Processing Detail"
+        component={ProcessingOrderDetailScreen}
+      />
 
       <Stack.Screen name="UpComing" component={UpComingOrderScreen} />
-      <Stack.Screen name="UpComing Detail" component={UpComingOrderDetailScreen} />
+      <Stack.Screen
+        name="UpComing Detail"
+        component={UpComingOrderDetailScreen}
+      />
 
       <Stack.Screen name="Completed" component={CompletedOrderScreen} />
       <Stack.Screen
         name="Completed Detail"
         component={CompletedDetailsScreen}
       />
-
-      <Stack.Screen name="Orders Details" component={OrdersDetailsScreen} />
     </Stack.Navigator>
   );
 };
