@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Dimensions} from 'react-native';
 let ScreenWidth = Dimensions.get('window').width;
 let heightWidth = Dimensions.get('window').height;
 
@@ -24,7 +24,7 @@ export default StyleSheet.create({
     paddingHorizontal: 30,
   },
   headLabel: {
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
 
   headTextStyle: {
@@ -55,7 +55,6 @@ export default StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontWeight: 'bold',
-
   },
 
   headText3: {
@@ -74,7 +73,6 @@ export default StyleSheet.create({
   bodyText1: {
     flex: 3,
     paddingRight: 10,
-
   },
 
   bodyText2: {
@@ -83,7 +81,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     alignItems: 'center',
     textAlign: 'center',
-    marginHorizontal:10,
+    marginHorizontal: 10,
   },
 
   bodyText3: {
@@ -92,31 +90,28 @@ export default StyleSheet.create({
     borderWidth: 1,
     alignItems: 'center',
     textAlign: 'center',
-    marginHorizontal:10,
+    marginHorizontal: 10,
   },
 
-  buttonContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    marginHorizontal:40,
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 40,
   },
 
-  declineButon:{
-    paddingHorizontal:20,
-    paddingVertical:10,
-    marginVertical:10,
-    backgroundColor:'red',
-    borderRadius:5,
+  declineButon: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginVertical: 10,
+    backgroundColor: 'red',
+    borderRadius: 5,
   },
 
-  acceptButon:{
-    paddingHorizontal:20,
-    paddingVertical:10,
-    marginVertical:10,
-    backgroundColor:'green',
-    borderRadius:5,
-
-
-  }
-
+  acceptButon: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginVertical: 10,
+    backgroundColor: 'green',
+    borderRadius: 5,
+  },
 });

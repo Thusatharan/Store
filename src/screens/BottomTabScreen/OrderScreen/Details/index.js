@@ -6,18 +6,16 @@ import {
   ActivityIndicator,
   ScrollView,
 } from 'react-native';
-import { Text, Button, Divider } from 'react-native-elements';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import VersionNumber from 'react-native-version-number';
+import {Text} from 'react-native-elements';
 
 import styles from './styles';
 
 import Colors from '../../../../constants/Colors';
 import Header from '../../../../components/shared/Header';
-import { useLoadItem } from './hooks';
+import {useLoadItem} from './hooks';
 
-function index({ route, navigation }) {
-  const { isLoading, response, onLoadItem } = useLoadItem(route.params.id);
+function index({route, navigation}) {
+  const {isLoading, response, onLoadItem} = useLoadItem(route.params.id);
   const item = React.useMemo(() => {
     return response?.data?.items.map((doc) => ({
       name: doc?.name,
@@ -44,8 +42,6 @@ function index({ route, navigation }) {
         <ActivityIndicator size="large" color={Colors.primary} />
       ) : (
         <ScrollView style={styles.mainContainer}>
-
-
           <View style={styles.headStyle}>
             <View style={styles.headLabel}>
               <Text style={styles.headTextStyle}>Collection Date</Text>
@@ -78,54 +74,22 @@ function index({ route, navigation }) {
               <Test>No data found</Test>
             )}
           </View>
-
-
-
-         
         </ScrollView>
       )}
-         <View style={styles.buttonContainer}>
-              <TouchableOpacity style={styles.declineButon}>
-                <View>
-                  <Text  style={{color:'white'}}>Decline</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.acceptButon}>
-                <View>
-                  <Text style={{color:'white'}}>Accept</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.declineButon}>
+          <View>
+            <Text style={{color: 'white'}}>Decline</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.acceptButon}>
+          <View>
+            <Text style={{color: 'white'}}>Accept</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
 
 export default index;
-
-
-
-
-{/* {item.length != 0 ? (
-                item.map((doc) => {
-                  return (
-                    <View style={styles.SubCon4}>
-                      <Text style={styles.TextStyl}>{doc.name}</Text>
-                      <View style={styles.SubCol}>
-                        <View style={styles.SmallCon}>
-                          <Text style={styles.TextStyl2}>{doc.quantity}</Text>
-                        </View>
-                      </View>
-                      <View style={styles.SmallCon}>
-                        <Text style={styles.TextStyl2}>{doc.picked}</Text>
-                      </View>
-                      <Text style={styles.TextStyl2}></Text>
-                    </View>
-                  );
-                })
-              ) : (
-                <Test>No data found</Test>
-              )}
-            </View>
-            <Text style={styles.NewTxt}>Ready For Collection</Text>
-          </View>
-        )} */}

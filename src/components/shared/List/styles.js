@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Dimensions} from 'react-native';
 let ScreenWidth = Dimensions.get('window').width;
 let ScreenHeight = Dimensions.get('window').height;
 export default StyleSheet.create({
@@ -17,8 +17,6 @@ export default StyleSheet.create({
     fontSize: 12,
   },
   iconStyle: {
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#ececec',
     borderRadius: 50,
     height: 25,
@@ -33,11 +31,10 @@ export default StyleSheet.create({
   },
   greenTxt: {
     color: 'green',
-    fontWeight:'bold'
-
+    fontWeight: 'bold',
   },
   orangeTxt: {
     color: 'orange',
-    fontWeight:'bold'
-  }
+    fontWeight: 'bold',
+  },
 });

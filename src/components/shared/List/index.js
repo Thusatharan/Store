@@ -29,12 +29,6 @@ function index({data, navigation, navigationUrl}) {
                       <Text style={styles.title}>
                         {'Inventory Packing Status'}{' '}
                       </Text>
-                      {/* <Text style={styles.subTitle}>
-                      {item.shipping_address.address1}
-                      {item.shipping_address.city},
-                      {item.shipping_address.country}
-                      {item.shipping_address.postcode}
-                    </Text> */}
                     </View>
                     <View style={{flexDirection: 'column'}}>
                       <Text
@@ -55,12 +49,19 @@ function index({data, navigation, navigationUrl}) {
                       </Text>
                     </View>
                   </View>
-                  <View style={styles.iconStyle}>
-                    <Ionicons
-                      name="arrow-forward-outline"
-                      size={23}
-                      color={'#FFFFFF'}
-                    />
+                  <View
+                    style={{
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      marginRight: 5,
+                    }}>
+                    <View style={styles.iconStyle}>
+                      <Ionicons
+                        name="arrow-forward-outline"
+                        size={23}
+                        color={'#FFFFFF'}
+                      />
+                    </View>
                   </View>
                 </View>
               </TouchableOpacity>
