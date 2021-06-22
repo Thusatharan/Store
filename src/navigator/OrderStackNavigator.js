@@ -8,7 +8,10 @@ import AllOrderScreen from '../screens/BottomTabScreen/OrderScreen/AllOrders';
 import AllOrderDetailScreen from '../screens/BottomTabScreen/OrderScreen/AllOrders/Details';
 
 import ProcessingOrderScreen from '../screens/BottomTabScreen/OrderScreen/Processing';
+import ProcessingOrderDetailScreen from '../screens/BottomTabScreen/OrderScreen/Processing/Details';
+
 import UpComingOrderScreen from '../screens/BottomTabScreen/OrderScreen/UpComing';
+import UpComingOrderDetailScreen from '../screens/BottomTabScreen/OrderScreen/UpComing/Details';
 
 import CompletedOrderScreen from '../screens/BottomTabScreen/OrderScreen/Completed';
 import CompletedDetailsScreen from '../screens/BottomTabScreen/OrderScreen/Completed/Details';
@@ -27,12 +30,15 @@ const OrderStackNavigator = () => {
         gestureDirection: 'vertical',
       }}>
       <Stack.Screen name="Orders" component={OrderScreen} />
-      
+
       <Stack.Screen name="AllOrders" component={AllOrderScreen} />
       <Stack.Screen name="All Order Detail" component={AllOrderDetailScreen} />
 
       <Stack.Screen name="Processing" component={ProcessingOrderScreen} />
+      <Stack.Screen name="Processing Detail" component={ProcessingOrderDetailScreen} />
+
       <Stack.Screen name="UpComing" component={UpComingOrderScreen} />
+      <Stack.Screen name="UpComing Detail" component={UpComingOrderDetailScreen} />
 
       <Stack.Screen name="Completed" component={CompletedOrderScreen} />
       <Stack.Screen
