@@ -61,7 +61,7 @@ function index({route, navigation}) {
           <ScrollView style={styles.mainContainer}>
             <Detail items={item.items} />
           </ScrollView>
-          {item.inventory_packing_status === 'pending' ? (
+          {/* {item.inventory_packing_status === 'pending' ? ( */}
             <View style={styles.buttonContainer}>
               <TouchableOpacity
                 style={styles.declineButon}
@@ -76,7 +76,7 @@ function index({route, navigation}) {
                 <Text style={{color: 'white'}}>Accept</Text>
               </TouchableOpacity>
             </View>
-          ) : null}
+          {/* ) : null} */}
         </>
       )}
       <Overlay
