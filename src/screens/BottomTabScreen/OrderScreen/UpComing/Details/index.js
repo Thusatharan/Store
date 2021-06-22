@@ -25,11 +25,15 @@ function index({route, navigation}) {
   const {isLoading, response, onLoadItem} = useLoadItem(route.params.id);
 
   const item = React.useMemo(() => {
-    return response?.data?.items.map((doc) => ({
-      name: doc?.name,
-      quantity: doc?.qty,
-      picked: doc?.sku,
-    }));
+    return {
+      inventory_status: response?.data?.driver_status,
+      inventory_packing_status: response?.data?.driver_delivery_status,
+      items: response?.data?.items.map((doc) => ({
+        name: doc?.name,
+        quantity: doc?.qty,
+        picked: doc?.sku,
+      })),
+    };
   }, [response?.data]);
 
   const toggleOverlay = (status) => {
@@ -56,22 +60,24 @@ function index({route, navigation}) {
       ) : (
         <>
           <ScrollView style={styles.mainContainer}>
-            <Detail items={item} />
+            <Detail items={item.items} />
           </ScrollView>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.declineButon}
-              activeOpacity={0.8}
-              onPress={() => toggleOverlay('decline')}>
-              <Text style={{color: 'white'}}>Decline</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.acceptButon}
-              activeOpacity={0.8}
-              onPress={() => toggleOverlay('accept')}>
-              <Text style={{color: 'white'}}>Accept</Text>
-            </TouchableOpacity>
-          </View>
+          {item.inventory_status === 'pending' && (
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity
+                style={styles.declineButon}
+                activeOpacity={0.8}
+                onPress={() => toggleOverlay('decline')}>
+                <Text style={{color: 'white'}}>Decline</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.acceptButon}
+                activeOpacity={0.8}
+                onPress={() => toggleOverlay('accept')}>
+                <Text style={{color: 'white'}}>Accept</Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </>
       )}
       <Overlay
