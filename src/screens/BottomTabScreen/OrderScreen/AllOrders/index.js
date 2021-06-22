@@ -58,7 +58,7 @@ function index({navigation}) {
             <ListItem
               data={items}
               navigation={navigation}
-              navigationUrl="Orders Details"
+              navigationUrl="All Order Detail"
             />
           </ScrollView>
         )}
