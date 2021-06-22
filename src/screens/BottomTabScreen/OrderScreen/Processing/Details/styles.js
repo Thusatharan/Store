@@ -16,4 +16,25 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 40,
+  },
+
+  declineButon: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginVertical: 10,
+    backgroundColor: 'red',
+    borderRadius: 5,
+  },
+
+  acceptButon: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginVertical: 10,
+    backgroundColor: 'green',
+    borderRadius: 5,
+  },
 });

@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, SafeAreaView, ActivityIndicator, ScrollView} from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  ActivityIndicator,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import {Text} from 'react-native-elements';
 
 import styles from './styles';
 import Colors from '../../../../../constants/Colors';
@@ -34,9 +41,23 @@ function index({route, navigation}) {
       {isLoading ? (
         <ActivityIndicator size="large" color={Colors.primary} />
       ) : (
-        <ScrollView style={styles.mainContainer}>
-          <Detail items={item} />
-        </ScrollView>
+        <>
+          <ScrollView style={styles.mainContainer}>
+            <Detail items={item} />
+          </ScrollView>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.declineButon}>
+              <View>
+                <Text style={{color: 'white'}}>Decline</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.acceptButon}>
+              <View>
+                <Text style={{color: 'white'}}>Accept</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </>
       )}
     </SafeAreaView>
   );
